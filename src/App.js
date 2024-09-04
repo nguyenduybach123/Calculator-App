@@ -1,9 +1,10 @@
-import { Calculator } from "./components/Calculator";
+import { Calculator } from "./components/Calculator.tsx";
+
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="App container">
       <Calculator />
     </div>
   );

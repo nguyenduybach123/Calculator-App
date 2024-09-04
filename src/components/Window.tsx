@@ -2,6 +2,6 @@ import React from 'react'
 
 export const Window = () => {
   return (
-    <div>Window</div>
+    <input className='value'></input>
   )
 }
