@@ -17,8 +17,6 @@
   }
   .container {
     position: relative;
-    min-width: 300px;
-    min-height: 400px;
     padding: 40px 30px 30px;
     border-radius: 20px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
@@ -29,10 +27,8 @@
     color: #fff;
     position: relative;
     display: grid;
-    width: 80px;
     place-items: center;
-    margin: 8px;
-    height: 80px;
+    height: 5rem;
     background: linear-gradient(180deg, #2f2f2f, #3f3f3f);
     box-shadow: inset -8px 0 8px rgba(0, 0, 0, 0.15),
       inset 0 -8px 8px rgba(0, 0, 0, 0.25), 0 0 0 2px rgba(0, 0, 0, 0.75),
@@ -88,7 +84,7 @@
   }
   .calculator .clear {
     grid-column: span 2;
-    width: 180px;
+    width: 10rem;
     background: #f00;
   }
   .calculator .clear::before {
@@ -103,7 +99,7 @@
   }
   .calculator .equal {
     grid-column: span 2;
-    width: 180px;
+    width: 10rem;
     background: #2196f3;
   }
   .calculator .equal::before{
