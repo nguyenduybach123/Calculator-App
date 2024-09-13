@@ -7,8 +7,7 @@ type CalculatorButtonType = {
   type?: 'None' | 'AC' | 'Plus' | 'Equal'
 }
 
-export const Button = ({value, type = 'None'}: CalculatorButtonType) => {
-  
+export const Button = ({value, type = 'None'}: CalculatorButtonType) => { 
   const { expressionArray, setExpressionArray, cursorPos, setCursorPos } = useGlobalContext();
 
   // const getPositionValue = (arr, position) => {
@@ -41,15 +40,30 @@ export const Button = ({value, type = 'None'}: CalculatorButtonType) => {
   //   return distanceDivision;
   // }
 
+  const getPositionDivision = () => {
+    for(let i = cursorPos - 1; i >= 0;) {
+      if(typeof expressionArray[i] === 'number')
+        i--;
+      else
+        return i;
+    }
+    
+    return 0;
+  }
+
+
   const handleUpdateExpression = () => {
     if(typeof value === 'string') {
       if(value === '/') {
-        return [...expressionArray.slice(0,cursorPos), 'numerator', '/', 'denominator', ...expressionArray.slice(cursorPos + 1)];
+        let startPos = getPositionDivision();
+        let endPos = cursorPos;
+        setCursorPos(cursorPos + 1);
+        return [...expressionArray.slice(0, startPos), 'n', ...expressionArray.slice(startPos, endPos), '/', 'd', ...expressionArray.slice(cursorPos)];
       }
     }
     setCursorPos(cursorPos + 1);
 
-    return [...expressionArray.slice(0,cursorPos), value, ...expressionArray.slice(cursorPos + 1)];
+    return [...expressionArray.slice(0,cursorPos), value, ...expressionArray.slice(cursorPos)];
   }
 
   return (

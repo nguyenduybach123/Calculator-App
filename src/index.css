@@ -108,3 +108,16 @@
     border-bottom: 1px solid #fff4;
     border-top: 1px solid #fff4;
   }
+
+  .fraction {
+    display: inline-block;
+    font-size: medium;
+  }
+
+  .numberator, .denominator {
+    display: block;
+  }
+
+  .denominator {
+    border-top: 1px solid black;
+  }

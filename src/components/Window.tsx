@@ -8,11 +8,11 @@ export const Window = () => {
 
   const { expressionArray } = useGlobalContext();
 
-  console.log(expressionArray)
+  //console.log(expressionArray)
 
   return (
     <div className='value flex flex-col justify-center items-center'>
-      <div className='w-full'>
+      <div className='w-full flex items-center'>
         <ExpressionChain chain={expressionArray} />
       </div>
     </div>
