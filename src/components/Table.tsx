@@ -10,9 +10,6 @@ const specialChars = {
 }
 
 export const Table = () => {
-
-
-
   return (
     <div className='grid grid-cols-4 gap-4 p-2 rounded-md'>
     {

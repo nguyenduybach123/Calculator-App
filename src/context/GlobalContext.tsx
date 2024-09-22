@@ -2,14 +2,15 @@
 import React from 'react'
 
 type GlobalContextType = {
-    expressionArray: Array<string | number>,
-    setExpressionArray: React.Dispatch<React.SetStateAction<Array<string | number>>>,
-    cursorPos: CursorType,
-    setCursorPos: React.Dispatch<React.SetStateAction<CursorType>>,
+    expressionString: string,
+    setExpressionString: React.Dispatch<React.SetStateAction<string>>,
+    resultExpression: number,
+    setResultExpression: React.Dispatch<React.SetStateAction<number>>,
+    historyExpression: Array<string>, 
+    setHistoryExpression: React.Dispatch<React.SetStateAction<Array<string>>>,
+    isOpenHistory: boolean,
+    setIsOpenHistory: React.Dispatch<React.SetStateAction<boolean>>
 }
-
-type CursorType = number
-
 
 const GlobalContext = React.createContext<GlobalContextType | undefined>(undefined);
 
@@ -22,17 +23,22 @@ export const useGlobalContext = () => {
 };
 
 export const GlobalProvider = ({children}) => {
-
-    const [expressionArray, setExpressionArray] = React.useState<Array<string | number>>([]);
-    const [cursorPos, setCursorPos] = React.useState<CursorType>(0);
+    const [expressionString, setExpressionString] = React.useState<string>("");
+    const [resultExpression, setResultExpression] = React.useState<number>(NaN);
+    const [historyExpression, setHistoryExpression] = React.useState<Array<string>>([]);
+    const [isOpenHistory, setIsOpenHistory] = React.useState<boolean>(false);
 
     return (
         <GlobalContext.Provider value={{
-                                    expressionArray, setExpressionArray,
-                                    cursorPos, setCursorPos
+                                    expressionString, setExpressionString,
+                                    resultExpression, setResultExpression,
+                                    historyExpression, setHistoryExpression,
+                                    isOpenHistory, setIsOpenHistory
                                 }}
         >
             {children}
         </GlobalContext.Provider>
     )
 }
+
+export default useGlobalContext;

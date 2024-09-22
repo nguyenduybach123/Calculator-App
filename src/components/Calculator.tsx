@@ -4,7 +4,7 @@ import { Table } from './Table.tsx'
 
 export const Calculator = () => {
   return (
-    <div className='flex flex-col justify-center items-center calculator'>
+    <div className='relative container p-3 flex flex-col justify-center items-center calculator'>
         <Window />
         <Table />
     </div>

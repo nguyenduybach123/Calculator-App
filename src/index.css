@@ -7,6 +7,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
   }
   body {
     display: flex;
@@ -15,9 +16,10 @@
     justify-content: center;
     background-color: #202020;
   }
-  .container {
+  .container {    
     position: relative;
-    padding: 40px 30px 30px;
+    margin: 10px;
+    padding: 20px 10px 10px;
     border-radius: 20px;
     box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
       10px 10px 70px rgba(0, 0, 0, 0.25), inset -5px -5px 15px rgba(0, 0, 0, 0.25),
@@ -99,7 +101,7 @@
   }
   .calculator .equal {
     grid-column: span 2;
-    width: 10rem;
+    width: 100%;
     background: #2196f3;
   }
   .calculator .equal::before{
